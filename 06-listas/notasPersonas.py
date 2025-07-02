@@ -12,5 +12,8 @@ for n in range(len(lstNomes)):
                      random.randint(0,100), 
                      random.randint(0,100)])
 
-for pos in range(len(lstNomes)):
-    print (lstNomes[pos], lstNotas[pos])
+medias = [(notas[0]*2 + notas[1]*3)/5  for notas in lstNotas]
+mediaAlunos = [[lstNomes[pos], medias[pos]] for pos in range(len(medias))]
+
+for mediaAluno in filter (lambda x: x[1] >= 60, mediaAlunos):
+    print (f"{mediaAluno[0]:<20s} foi aprovado com {mediaAluno[1]:_>6.2f}")
