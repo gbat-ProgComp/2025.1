@@ -4,14 +4,17 @@ oliviaFala = """Procurar Procurar a nossa felicidade através da felicidade dos 
 Ele agora vivia... Tinha tido apenas a ilusão de viver, mas na verdade andara morto por entre os homens. 
 O dia mais importante da minha vida foi aquele em que, recordando todos os meus erros, achei que já chegara a hora de procurar uma nova maneira de ser útil ao próximo, de dar novo rumo às minhas relações humanas. Que era que eu tinha feito senão satisfazer os meus desejos, o meu egoísmo? Podia ser considerada uma criatura boa apenas porque não matava, porque não roubava, porque não agredia? A bondade não deve ser uma virtude passiva. No dia em que eu achei Deus, encontrei a paz para mim e ao mesmo tempo percebi que de certa maneira não haveria paz para mim. Descobri que a paz interior só se conquista com o sacrifício da paz exterior. Era preciso fazer alguma coisa pelos outros. O Mundo está cheio de sofrimento, de gritos de socorro. Que tinha eu feito até então para diminuir esse sofrimento, para atender a esses apelos? Eu via em meu redor pessoas aflitas que, para se salvarem, esperavam apenas a mão que as apoiasse, nada mais que isso. E Deus dera-me duas mãos. Pensei tudo isso numa noite de insônia. Quando o dia nasceu, senti que tinha nascido de novo com ele. Era uma mulher nova."""
 
-palavras = oliviaFala.split()
+l_palavras    = []
+l_ocorrencias = []
 
-contagem = {}
-
-for palavra in palavras:
-    if (palavra in contagem.keys()) == False:
-        contagem[palavra] = 1
+for palavra in oliviaFala.split():
+    if palavra in l_palavras:
+        pos_palavra = l_palavras.index(palavra)
+        l_ocorrencias[pos_palavra] += 1
     else:
-        contagem[palavra] = contagem[palavra] + 1
-print (contagem)
-    
+        l_palavras.append(palavra)
+        l_ocorrencias.append(1)
+        
+print (sorted(zip(l_palavras, l_ocorrencias), 
+              key= lambda x : x[1],
+              reverse=True)[0:5])

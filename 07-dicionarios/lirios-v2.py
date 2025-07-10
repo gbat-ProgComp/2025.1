@@ -6,12 +6,14 @@ O dia mais importante da minha vida foi aquele em que, recordando todos os meus 
 
 palavras = oliviaFala.split()
 
+# Gera um dicionário em que as chaves são as palavras
+# e os valores são os números de vezes que a palavra ocorre.
 contagem = {}
-
 for palavra in palavras:
-    if (palavra in contagem.keys()) == False:
-        contagem[palavra] = 1
-    else:
-        contagem[palavra] = contagem[palavra] + 1
-print (contagem)
+    contagem[palavra] = contagem.get(palavra, 0) + 1
+
+# Exibe somente as cinco palavras mais frequentes.
+print (sorted(contagem.items(), 
+              key = lambda x: x[1],
+              reverse = True)[0:5])
     
