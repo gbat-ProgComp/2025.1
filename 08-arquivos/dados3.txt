@@ -1,0 +1,3 @@
+Este conteúdo foi criado por um 
+programa em Python
+Estamos adicionando esse conteúdo ao arquivo original.

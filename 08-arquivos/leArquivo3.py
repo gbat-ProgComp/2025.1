@@ -1,0 +1,6 @@
+fd = open ("dados1.txt", "r")
+dados = fd.readline()
+print (dados)
+dados = fd.readline()
+print (dados)
+fd.close()
