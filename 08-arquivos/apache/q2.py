@@ -17,5 +17,5 @@ try:
     print (f"A data com mais acessos é {maisOcorr[0]} com {maisOcorr[1]}.")
 
 except FileNotFoundError as e:
-    print ("O arquivo {nomeArqLog} não está acessível.")
+    print (f"O arquivo {nomeArqLog} não está acessível.")
     exit()
